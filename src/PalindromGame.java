@@ -12,13 +12,18 @@ public class PalindromGame {
         GameService gameService = new GameService();
         //Игра длится бесконечно
         while (true) {
-            // Todo и у нее нет очередности ?? уточнить что это
             BufferedReader r = new BufferedReader(new InputStreamReader(System.in));
-            System.out.println("Имя участника :");
-            final String name = r.readLine();
-            // TODO сделать проверку на null
-            System.out.println("Ведите палиндром");
-            String word = r.readLine().trim().replaceAll(" ", "").toLowerCase();
+            String name = "";
+            while (name.equals("")) {
+                System.out.println("Имя участника :");
+                name = r.readLine();
+            }
+            String word = "";
+            while (word.equals("")) {
+                System.out.println("Ведите палиндром");
+                word = r.readLine().trim().replaceAll(" ", "").toLowerCase();
+            }
+
             boolean isPalindrom = Utils.isPalindrom(word);
             if (isPalindrom) {
                 // считаем очки(прошлые и новые)
