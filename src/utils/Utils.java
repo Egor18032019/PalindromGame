@@ -13,7 +13,6 @@ public class Utils {
         int lengthWord = word.length();
         for (int i = 0; i < (lengthWord / 2); ++i) {
             if (word.charAt(i) != word.charAt(lengthWord - i - 1)) {
-                System.out.println(word.charAt(i) + " - " + word.charAt(lengthWord - i - 1));
                 return false;
             }
         }
